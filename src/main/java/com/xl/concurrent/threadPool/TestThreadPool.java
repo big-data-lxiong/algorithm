@@ -1,7 +1,6 @@
 package com.xl.concurrent.threadPool;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class TestThreadPool {
 
@@ -15,6 +14,9 @@ public class TestThreadPool {
     });
 
 
+    ExecutorService threadPool = new ThreadPoolExecutor(1, 5, 30, TimeUnit.MILLISECONDS,
+      new LinkedBlockingDeque<Runnable>(1024), Executors.defaultThreadFactory(),
+      new ThreadPoolExecutor.AbortPolicy());
   }
 
 }

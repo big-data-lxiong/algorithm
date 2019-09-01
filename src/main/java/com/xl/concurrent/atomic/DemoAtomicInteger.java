@@ -73,7 +73,7 @@ public class DemoAtomicInteger {
 
     try {
       countDownLatch.await();
-    } catch (InterruptedException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
     System.out.println(atomicInteger.get());
